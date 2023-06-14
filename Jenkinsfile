@@ -14,6 +14,12 @@ pipeline {
                 bat 'mvn --version'
             }
 		}
+		
+	    stage('Clone') {
+            steps {
+                git credentialsId: 'syedmulesoft2030', url: 'https://github.com/mulesoft2030/CubeGenerator.git'
+            }
+		}
 
 	
 	}
