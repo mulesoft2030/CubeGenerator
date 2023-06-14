@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                git 'https://github.com/mulesoft2030/CubeGenerator.git'
+                git branch: 'main', credentialsId: 'syedmulesoft2030', 'https://github.com/mulesoft2030/CubeGenerator.git'
             }
 		}
 		stage('mvn version') {
