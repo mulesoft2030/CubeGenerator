@@ -7,21 +7,13 @@ pipeline {
     }
 
     stages {
-        stage('Clone') {
+        
+           	
+        stage('mvn version') {
             steps {
-                git  credentialsId: 'syedmulesoft2030', 'https://github.com/mulesoft2030/CubeGenerator.git'
+                bat 'mvn --version'
             }
 		}
-		stage('mvn deploy') {
-            steps {
-                 configFileProvider(
-                    [configFile(fileId: 'settings.xml', target: 'settings.xml')]) {
-                    bat 'mvn clean deploy -s settings.xml'
-                }
-                
-			}    
-		}	
-        
 
 	
 	}
